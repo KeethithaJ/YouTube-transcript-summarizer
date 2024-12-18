@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url("static/background.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .leaves-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .leaf img {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            animation: falling 8s linear infinite;
+        }
+
+        @keyframes falling {
+            0% {
+                transform: translateY(-100%) rotate(0deg);
+            }
+            100% {
+                transform: translateY(110%) rotate(360deg);
+            }
+        }
+
+        .leaf:nth-child(odd) img {
+            animation-duration: 10s;
+        }
+
+        .leaf:nth-child(even) img {
+            animation-duration: 7s;
+        }
+
+        .login-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .login-box h2 {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .login-box input[type="email"],
+        .login-box input[type="email"] {
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .login-box input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #FFA15F;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-box input[type="submit"]:hover {
+            background-color: #FF8A3D;
+        }
+
+        .login-box p {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .login-box a {
+            color: #FFA15F;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-box a:hover {
+            text-decoration: underline;
+        }
+
+        .leaf:nth-child(1) { top: -10%; left: 5%; }
+        .leaf:nth-child(2) { top: -15%; left: 20%; animation-delay: 2s; }
+        .leaf:nth-child(3) { top: -20%; left: 40%; animation-delay: 4s; }
+        .leaf:nth-child(4) { top: -10%; left: 60%; animation-delay: 6s; }
+        .leaf:nth-child(5) { top: -25%; left: 80%; animation-delay: 8s; }
+        .leaf:nth-child(6) { top: -30%; left: 15%; animation-delay: 1s; }
+        .leaf:nth-child(7) { top: -35%; left: 50%; animation-delay: 3s; }
+        .leaf:nth-child(8) { top: -40%; left: 70%; animation-delay: 5s; }
+    </style>
+</head>
+<body>
+    <div class="leaves-container">
+        <div class="leaf"><img src="static/leave2.png" alt="Leaf"></div>
+        <div class="leaf"><img src="static/leave2.png" alt="Leaf"></div>
+        <div class="leaf"><img src="static/leave2.png" alt="Leaf"></div>
+        <div class="leaf"><img src="static/leave2.png" alt="Leaf"></div>
+        <div class="leaf"><img src="static/leave1.png" alt="Leaf"></div>
+        <div class="leaf"><img src="static/leave1.png" alt="Leaf"></div>
+        <div class="leaf"><img src="static/leave1.png" alt="Leaf"></div>
+        <div class="leaf"><img src="static/leave1.png" alt="Leaf"></div>
+    </div>
+
+    <div class="login-box">
+        <h2>Sign In</h2>
+        <form action="/login" method="POST">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+        <p><a href="#">Forgot Password?</a></p>
+        <p>Don't have an account? <a href="/register">Register here</a></p>
+    </div>
+</body>
+</html>

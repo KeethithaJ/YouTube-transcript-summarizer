@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Results</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+            animation: bgAnimation 8s infinite alternate;
+            padding: 20px;
+        }
+        @keyframes bgAnimation {
+            0% { background: linear-gradient(120deg, #a1c4fd, #c2e9fb); }
+            50% { background: linear-gradient(120deg, #89f7fe, #66a6ff); }
+            100% { background: linear-gradient(120deg, #a1c4fd, #c2e9fb); }
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        h3 {
+            margin-top: 30px;
+            color: #007bff;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Translation Results</h2>
+        
+        <div class="mb-4">
+            <h3>Original Transcript:</h3>
+            <p class="border rounded p-3 bg-light">{{ original_text }}</p>
+        </div>
+
+        <div>
+            <h3>Translated Transcripts:</h3>
+            {% for lang, translation in translations.items() %}
+                <div class="mb-4">
+                    <h4>{{ lang | capitalize }} Translation:</h4>
+                    <p class="border rounded p-3 bg-light">{{ translation }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
